@@ -19,7 +19,6 @@ export default class Meal extends Component {
   }
 
   componentDidMount() {
-    // console.log(this.props.meal);
     let totalCalorieCount = 0;
     this.props.meal.foods.map(food => (
       totalCalorieCount += food.total_calories
@@ -35,9 +34,11 @@ export default class Meal extends Component {
       <div>
         <div style={{ display: 'flex'}}>
           <span style={{ flex: 1 }}>{meal.title}</span>
+          <span style={{ flex: 1 }}>{meal.day}</span>
           <span style={{ flex: 1 }}>{meal.date}</span>
           <span style={{ flex: 1 }}>{meal.time}</span>
           <span style={{ flex: 1 }}>{this.state.totalCalories}</span>
+          <span style={{ flex: 1 }}>{meal.health_rating}</span>
           <span style={{ flex: 1 }}><button onClick={() => this.showFoods()}>show foods</button></span>
         </div>
         {this.state.foodsAreOpen ? <Foods foodList={meal.foods} /> : <div></div>}
