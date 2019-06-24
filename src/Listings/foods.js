@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import FoodHeader from '../Headers/foodHeader';
+
 
 export default class Foods extends Component {
   constructor(props) {
@@ -10,11 +12,7 @@ export default class Foods extends Component {
     const { foodList } = this.props;
     return (
       <div style={{ marginLeft: '50px' }}>
-        <div style={{ display: 'flex'}}>
-          <span style={{ flex: 1, fontWeight: 'bold' }}>Name</span>
-          <span style={{ flex: 1, fontWeight: 'bold' }}>Serving Count</span>
-          <span style={{ flex: 1, fontWeight: 'bold' }}>Total Calories</span>
-        </div>
+        <FoodHeader />
         {foodList.map(food => (
           <div key={food.id} style={{ display: 'flex'}}>
             <span style={{ flex: 1 }}>{food.name}</span>

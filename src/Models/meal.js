@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Foods from './foods';
+import Foods from '../Listings/foods';
 
 export default class Meal extends Component {
   constructor(props) {
@@ -46,8 +46,5 @@ export default class Meal extends Component {
     );
   }
 }
-
-
-
 
 
