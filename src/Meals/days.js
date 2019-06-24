@@ -24,6 +24,16 @@ export default class Days extends Component {
     });
   }
 
+  // calculateTotalCaloriesForDay = (meals,dayOfTheWeekId) => {
+  //   let totalCalorieCount = 0;
+  //   meals.map(meal => (
+  //     meal.foods.map(food => (
+  //       (meal.day_id === dayOfTheWeekId ? totalCalorieCount += food.total_calories : null)
+  //     ))
+  //   ));
+  //   return totalCalorieCount
+  // }
+
   render() {
   	const { currentDay,currentDayId,currentWeekId,currentMonthId,currentYearId } = this.props;
   	console.log(this.state.meals);

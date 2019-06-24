@@ -23,7 +23,7 @@ export default class Meals extends Component {
         'week_id' : 2,
         'month_id' : 5,
         'year_id' : 1,
-        'health_rating' : 2,
+        'health_rating' : 2.0,
         'foods' : [
           {
             'id' : 1,
@@ -49,7 +49,7 @@ export default class Meals extends Component {
         'week_id' : 2,
         'month_id' : 5,
         'year_id' : 1,
-        'health_rating' : 1,
+        'health_rating' : 1.0,
         'foods' : [
           {
             'id' : 3,
@@ -81,7 +81,7 @@ export default class Meals extends Component {
         'week_id' : 2,
         'month_id' : 5,
         'year_id' : 1,
-        'health_rating' : 1,
+        'health_rating' : 1.0,
         'foods' : [
           {
             'id' : 6,
