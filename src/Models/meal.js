@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Foods from '../Listings/foods';
+import * as calculator from '../Helpers/calculator.js'; 
 
 export default class Meal extends Component {
   constructor(props) {
@@ -19,12 +20,8 @@ export default class Meal extends Component {
   }
 
   componentDidMount() {
-    let totalCalorieCount = 0;
-    this.props.meal.foods.map(food => (
-      totalCalorieCount += food.total_calories
-    ));
     this.setState({
-      totalCalories: totalCalorieCount
+      totalCalories: calculator.calculateTotalMealCalories(this.props.meal)
     })
   }
 

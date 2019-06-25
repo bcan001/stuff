@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MealsToday from '../MealsToday';
 import MealsThisWeek from '../MealsThisWeek';
+import MealsThisMonth from '../MealsThisMonth';
 
 
 export default class Meals extends Component {
@@ -20,6 +21,7 @@ export default class Meals extends Component {
           <select onChange={this.changeSubtitle} value={this.state.subTitle}>
             <option value="Meals Today">Meals Today</option>
             <option value="Meals This Week">Meals This Week</option>
+            <option value="Meals This Month">Meals This Month</option>
           </select>
           <h2>{subTitle}</h2>
           <MealsToday />
@@ -31,11 +33,24 @@ export default class Meals extends Component {
           <select onChange={this.changeSubtitle} value={this.state.subTitle}>
             <option value="Meals Today">Meals Today</option>
             <option value="Meals This Week">Meals This Week</option>
+            <option value="Meals This Month">Meals This Month</option>
           </select>
           <h2>{subTitle}</h2>
           <MealsThisWeek />
         </div>
       );
+    } else if (subTitle === 'Meals This Month') {
+      return (
+        <div>
+          <select onChange={this.changeSubtitle} value={this.state.subTitle}>
+            <option value="Meals Today">Meals Today</option>
+            <option value="Meals This Week">Meals This Week</option>
+            <option value="Meals This Month">Meals This Month</option>
+          </select>
+          <h2>{subTitle}</h2>
+          <MealsThisMonth />
+        </div>
+      )
     }
   }
 }

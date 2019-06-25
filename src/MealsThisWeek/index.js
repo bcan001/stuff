@@ -10,6 +10,7 @@ export default class MealsThisWeek extends Component {
         'title' : 'McDonalds For Lunch',
         'time' : '12:00',
         'day_of_the_week' : 'Monday',
+        'week_of_the_month' : 1,
         'health_rating' : 2.0,
         'foods' : [
           {
@@ -31,6 +32,7 @@ export default class MealsThisWeek extends Component {
         'title' : 'McDonalds For Dinner',
         'time' : '22:00',
         'day_of_the_week' : 'Monday',
+        'week_of_the_month' : 1,
         'health_rating' : 1.0,
         'foods' : [
           {
@@ -58,6 +60,7 @@ export default class MealsThisWeek extends Component {
         'title' : 'McDonalds For Dinner Again',
         'time' : '22:00',
         'day_of_the_week' : 'Monday',
+        'week_of_the_month' : 1,
         'health_rating' : 1.0,
         'foods' : [
           {

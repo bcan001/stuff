@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import Meals from '../Listings/meals';
 
 export default class MealsToday extends Component {
@@ -11,6 +10,7 @@ export default class MealsToday extends Component {
         'title' : 'McDonalds For Lunch',
         'time' : '12:00',
         'day_of_the_week' : 'Monday',
+        'week_of_the_month' : 1,
         'health_rating' : 2.0,
         'foods' : [
           {

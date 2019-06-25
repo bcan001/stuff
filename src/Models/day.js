@@ -1,45 +1,63 @@
 import React, { Component } from "react";
-
+import MealHeader from '../Headers/mealHeader';
+import Meals from '../Listings/meals';
+import * as calculator from '../Helpers/calculator.js'; 
 
 export default class Day extends Component {
   constructor(props) {
     super(props);
     this.state = {
       totalCalories: 0,
-      averageHealthRating: 0.00
+      averageHealthRating: 0.00,
+      mealsIsOpen: false
     };
   }
 
   componentDidMount() {
-    let totalCalorieCount = 0;
-    let totalHealthRating = 0.00;
-    let totalMealsCount = 0;
     let { meals } = this.props;
-    meals.map(meal => (
-      meal.foods.map(food => (
-        totalCalorieCount += food.total_calories
-      ))
-    ));
-    meals.map(meal => (
-      totalHealthRating += meal.health_rating,
-      totalMealsCount += 1
-    ));
     this.setState({
-      totalCalories: totalCalorieCount,
-      averageHealthRating: totalHealthRating / totalMealsCount
+      totalCalories: calculator.calculateTotalDayCalories(meals),
+      averageHealthRating: calculator.calculateAverageDayHealthRating(meals)
     })
+  }
+
+  showMeals = () => {
+    if (this.state.mealsIsOpen === false) {
+      this.setState({
+        mealsIsOpen: true
+      })
+    } else {
+      this.setState({
+        mealsIsOpen: false
+      })
+    }
   }
 
   render() {
     const { meals,dayOfTheWeek } = this.props;
     return (
-    	<div style={{ display: 'flex'}}>
-        <span style={{ flex: 1 }}>{dayOfTheWeek}</span>
-        <span style={{ flex: 1 }}>&nbsp;</span>
-        <span style={{ flex: 1 }}>{this.state.totalCalories}</span>
-        <span style={{ flex: 1 }}>{this.state.averageHealthRating}</span>
+      <div>
+      	<div style={{ display: 'flex'}}>
+          <span style={{ flex: 1 }}>{dayOfTheWeek}</span>
+          <span style={{ flex: 1 }}>&nbsp;</span>
+          <span style={{ flex: 1 }}>{this.state.totalCalories}</span>
+          <span style={{ flex: 1 }}>{this.state.averageHealthRating}</span>
+          <span style={{ flex: 1 }}><button onClick={() => this.showMeals()}>show meals</button></span>
+        </div>
+        {
+          this.state.mealsIsOpen ? 
+          <div style={{ marginLeft: '50px' }}>
+            <Meals meals={meals} />
+          </div>
+          : <span></span>
+        }
       </div>
     )
   }
 }
+
+
+
+
+
 
